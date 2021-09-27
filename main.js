@@ -17,9 +17,10 @@ document.querySelector('#app').innerHTML = `
       <p>Test Avif: <br/><img src="${testAvif}"/></p>
     </div>
     <div class="column">
-      <p>Srcset Avif: <br/>
+      <p>Srcset Webp: <br/>
         <picture>
-        <source srcset="${srcsetAvif2}" type="image/avif"/>
+        <source srcset="${srcsetAvif}" type="image/avif"/>
+        <source srcset="${srcsetWebp}" type="image/webp"/>
         <img
             src="${placeholder}"
             width="${width}"
