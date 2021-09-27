@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "vite": "^2.3.0",
-    "vite-imagetools": "^3.6.2"
+    "vite-imagetools": "^3.6.2",
+    "yarn": "^1.22.11"
   }
 }
