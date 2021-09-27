@@ -1,4 +1,5 @@
 import './style.css'
+
 // import 3 different sizes of the image and create a srcset from them
 import srcsetAvif from './example.jpg?w=500;700;900;1200&avif&srcset'
 import srcsetAvif2 from './example.jpg?w=300;400&avif&srcset'
@@ -16,12 +17,16 @@ document.querySelector('#app').innerHTML = `
     <div class="column">
       <p>Test Avif: <br/><img src="${testAvif}"/></p>
     </div>
-    <div class="column">
+    <div class="column" id="c2">
       <p>Srcset Webp: <br/>
+      <h4 class="Message">
+        Your browser has loaded this image in <span id="format" class="Format">...</span> format
+      </h4>
         <picture>
         <source srcset="${srcsetAvif}" type="image/avif"/>
         <source srcset="${srcsetWebp}" type="image/webp"/>
         <img
+            id="image1"
             src="${placeholder}"
             width="${width}"
             height="${height}"
@@ -29,13 +34,17 @@ document.querySelector('#app').innerHTML = `
         </picture>
       </p>
     </div>
-    <div class="column">
+    <div class="column" id="c3">
       <!-- Now we can use our images -->
       <p>Srcset Avif: <br/>
+      <h4 class="Message">
+        Your browser has loaded this image in <span id="format2" class="Format">...</span> format
+      </h4>
       <picture>
         <source scrset="${srcsetAvif}" type="image/avif"/>
         <source srcset="${srcsetWebp}" type="image/webp"/>
         <img
+            id="image2"
             src="${placeholder}"
             width="${width}"
             height="${height}"
@@ -45,3 +54,21 @@ document.querySelector('#app').innerHTML = `
   </div>
 
 `
+
+window.addEventListener('load', function (){
+  const image = document.getElementById('image1');
+  const format = document.getElementById('format');
+  const url = image.currentSrc.split('?');
+  const extension = url[0].split('.').pop();
+
+  format.innerHTML = extension;
+
+
+  const image2 = document.getElementById('image2');
+  const format2 = document.getElementById('format2');
+  const url2 = image2.currentSrc.split('?');
+  const extension2 = url2[0].split('.').pop();
+
+  format.innerHTML = extension;
+  format2.innerHTML = extension2;
+});
