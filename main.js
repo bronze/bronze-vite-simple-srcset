@@ -18,7 +18,7 @@ document.querySelector('#app').innerHTML = `
       <p>Test Avif: <br/><img src="${testAvif}"/></p>
     </div>
     <div class="column" id="c2">
-      <p>Srcset Webp: <br/>
+      <p>Srcset: <br/>
       <h4 class="Message">
         Your browser has loaded this image in <span id="format" class="Format">...</span> format
       </h4>
@@ -36,7 +36,7 @@ document.querySelector('#app').innerHTML = `
     </div>
     <div class="column" id="c3">
       <!-- Now we can use our images -->
-      <p>Srcset Avif: <br/>
+      <p>Srcset: <br/>
       <h4 class="Message">
         Your browser has loaded this image in <span id="format2" class="Format">...</span> format
       </h4>
