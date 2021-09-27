@@ -54,7 +54,7 @@ document.querySelector('#app').innerHTML = `
   </div>
 
 `
-
+// https://avif-support-test.glitch.me/
 window.addEventListener('load', function (){
   const image = document.getElementById('image1');
   const format = document.getElementById('format');
